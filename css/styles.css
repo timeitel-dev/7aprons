@@ -1,11 +1,3 @@
-/*
-
-Eatery Cafe Template 
-
-http://www.templatemo.com/tm-515-eatery
-
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 body {
@@ -395,23 +387,36 @@ section {
 }
 
 .slider .item {
-  background-position: inherit;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: local;
   background-size: cover;
   height: 650px;
 }
 
+.slider .item .container {
+  color: white;
+}
+
 .slider .item-first {
-  background-image: url(../images/slider-image1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/landing/nasi-campur.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 
 .slider .item-second {
-  background-image: url(../images/slider-image2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/landing/siomay.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 
 .slider .item-third {
-  background-image: url(../images/slider-image3.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/landing/sate-babi.jpg');
+  background-position: center center;
+  background-size: cover;
 }
 
 .slider .item-second .section-btn {
@@ -420,11 +425,6 @@ section {
 
 .slider .item-second .section-btn:hover {
   background: #ffffff;
-}
-
-.slider .item-third .section-btn {
-  background: transparent;
-  border: 1px solid #ffffff;
 }
 
 .slider .item-third .section-btn:hover,
@@ -969,4 +969,22 @@ footer .social-icon {
 .featured-header {
   text-align: start;
   margin: 0 0 1rem 2rem;
+}
+
+/*---------------------------------------
+     Button
+  -----------------------------------------*/
+.btn-primary {
+  color: white;
+  background-color: #e53e3e;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  box-shadow: inset 0 0 0 20rem rgba(0, 0, 0, 0.0625);
+  background-color: rgba(206, 50, 50, 0.8);
+}
+
+.btn-primary:active {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
 }
