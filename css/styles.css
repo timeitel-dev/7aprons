@@ -12,6 +12,11 @@ body {
      TYPOGRAPHY              
   -----------------------------------------*/
 
+#id,
+.menu-section {
+  font-family: 'Montserrat', sans-serif;
+}
+
 h1,
 h2,
 h3,
