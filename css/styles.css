@@ -1000,3 +1000,26 @@ footer .social-icon {
 .btn-primary:active {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
 }
+
+.menu-thumb img {
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu-thumb .siomay-img {
+  object-position: 20%;
+}
+
+.menu-thumb .sate-babi-2-img {
+  object-position: 0 80%;
+}
+
+.menu-thumb .nasi-liwet-komplit-img {
+  object-position: 0 40%;
+}
+
+.menu-thumb .balado-img {
+  object-position: 0 65%;
+}
