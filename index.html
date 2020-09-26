@@ -566,6 +566,125 @@
       </div>
     </section>
 
+    <section>
+      <div class="container">
+        <div id="v-form" class="order-form">
+          <h2 class="form-title">{{form.formName}}</h2>
+          <p>
+            Send through a message of your order along with your contact number
+            and we'll be in touch to confirm payment and delivery details.
+          </p>
+          <form>
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" v-model="form.userName" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Favorite Color</label>
+              <div class="control">
+                <div class="select">
+                  <select v-model="form.favoriteColor">
+                    <option
+                      v-for="color in ['Red', 'Blue', 'Green']"
+                      :value="color"
+                    >
+                      {{color}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Favorite Hamburger Place</label>
+              <div class="control">
+                <label>
+                  <input
+                    type="radio"
+                    name="hamburgerPlace"
+                    value="whataburger"
+                    v-model="form.favoriteHamburger"
+                  />
+                  Whataburger
+                </label>
+                <br />
+                <label>
+                  <input
+                    type="radio"
+                    name="hamburgerPlace"
+                    value="pterrys"
+                    v-model="form.favoriteHamburger"
+                  />
+                  P.Terry's
+                </label>
+                <br />
+                <label>
+                  <input
+                    type="radio"
+                    name="hamburgerPlace"
+                    value="hopdoddy"
+                    v-model="form.favoriteHamburger"
+                  />
+                  Hopdoddy
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Favorite Hangout</label>
+              <div class="control">
+                <label>
+                  <input
+                    type="checkbox"
+                    value="barton-springs"
+                    v-model="form.favoriteHangout"
+                  />
+                  Barton Springs
+                </label>
+                <br />
+                <label>
+                  <input
+                    type="checkbox"
+                    value="zilker-park"
+                    v-model="form.favoriteHangout"
+                  />
+                  Zilker Park
+                </label>
+                <br />
+                <label>
+                  <input
+                    type="checkbox"
+                    value="sixth-street"
+                    v-model="form.favoriteHangout"
+                  />
+                  Sixth Street
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">How many hours a week do you work?</label>
+              <div class="control">
+                <h4 class="title is-4">{{form.workHours}} / 80</h4>
+                <input type="range" min="0" max="80" v-model="form.workHours" />
+              </div>
+            </div>
+
+            <button
+              class="btn-aprons order-btn"
+              type="submit"
+              @click.prevent="fakeSubmit"
+            >
+              Submit order
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer id="footer" data-stellar-background-ratio="0.5">
       <div class="container">
@@ -663,5 +782,8 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/form.js"></script>
   </body>
 </html>
