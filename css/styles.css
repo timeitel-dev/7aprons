@@ -1089,3 +1089,8 @@ footer .social-icon {
   font-weight: 600;
   font-size: 1.4rem;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+}
