@@ -1095,3 +1095,7 @@ footer .social-icon {
   display: flex;
   align-items: center;
 }
+
+.landing-carousel {
+  text-shadow: black 0px 0px 1px;
+}
