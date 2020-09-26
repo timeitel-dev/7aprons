@@ -603,9 +603,8 @@ navbar-right {
 
 .menu-thumb .menu-info p {
   color: #d9d9d9;
-  text-transform: uppercase;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
@@ -1022,4 +1021,18 @@ footer .social-icon {
 
 .menu-thumb .balado-img {
   object-position: 0 65%;
+}
+
+.menu-info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.menu-item {
+  width: 80%;
+  margin-right: 10px;
+}
+
+.menu-item p {
+  line-height: 1.3;
 }
