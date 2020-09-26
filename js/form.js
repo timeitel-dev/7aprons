@@ -4,9 +4,26 @@ new Vue({
     form: {
       formName: 'Online Order',
       userName: '',
-      favoriteColor: 'Red',
+      email: '',
+      number: '',
       favoriteHamburger: '',
-      favoriteHangout: [],
+      order: [],
+      siomay: {
+        quantity: 0,
+        cost: 8.5
+      },
+      sate: {
+        quantity: 0,
+        cost: 8.5
+      },
+      nasiLiwet: {
+        quantity: 0,
+        cost: 8.5
+      },
+      nasiCampur: {
+        quantity: 0,
+        cost: 8.5
+      },
       workHours: 0
     },
     showSubmitFeedback: false

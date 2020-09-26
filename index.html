@@ -571,10 +571,10 @@
         <div id="v-form" class="order-form">
           <h2 class="form-title">{{form.formName}}</h2>
           <p>
-            Send through a message of your order along with your contact number
-            and we'll be in touch to confirm payment and delivery details.
+            Send your order along with your contact number and we'll be in touch
+            to confirm payment and delivery details.
           </p>
-          <form>
+          <form class="form-container">
             <div class="field">
               <label class="label">Name</label>
               <div class="control">
@@ -583,93 +583,70 @@
             </div>
 
             <div class="field">
-              <label class="label">Favorite Color</label>
+              <label class="label">Contact Email</label>
               <div class="control">
-                <div class="select">
-                  <select v-model="form.favoriteColor">
-                    <option
-                      v-for="color in ['Red', 'Blue', 'Green']"
-                      :value="color"
-                    >
-                      {{color}}
-                    </option>
+                <input class="input" type="text" v-model="form.email" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Contact Number</label>
+              <div class="control">
+                <input class="input" type="text" v-model="form.number" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Meals</label>
+              <div class="control">
+                <label>
+                  <select v-model="form.siomay.quantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">Favorite Hamburger Place</label>
-              <div class="control">
-                <label>
-                  <input
-                    type="radio"
-                    name="hamburgerPlace"
-                    value="whataburger"
-                    v-model="form.favoriteHamburger"
-                  />
-                  Whataburger
+                  Siomay - $8.50
                 </label>
                 <br />
                 <label>
-                  <input
-                    type="radio"
-                    name="hamburgerPlace"
-                    value="pterrys"
-                    v-model="form.favoriteHamburger"
-                  />
-                  P.Terry's
+                  <select v-model="form.sate.quantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  Sate Babi - $8.50
                 </label>
                 <br />
                 <label>
-                  <input
-                    type="radio"
-                    name="hamburgerPlace"
-                    value="hopdoddy"
-                    v-model="form.favoriteHamburger"
-                  />
-                  Hopdoddy
-                </label>
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">Favorite Hangout</label>
-              <div class="control">
-                <label>
-                  <input
-                    type="checkbox"
-                    value="barton-springs"
-                    v-model="form.favoriteHangout"
-                  />
-                  Barton Springs
+                  <select v-model="form.nasiLiwet.quantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  Nasi Liwet Komplit - $8.50
                 </label>
                 <br />
                 <label>
-                  <input
-                    type="checkbox"
-                    value="zilker-park"
-                    v-model="form.favoriteHangout"
-                  />
-                  Zilker Park
+                  <select v-model="form.nasiCampur.quantity">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  Nasi Campur - $8.50
                 </label>
-                <br />
-                <label>
-                  <input
-                    type="checkbox"
-                    value="sixth-street"
-                    v-model="form.favoriteHangout"
-                  />
-                  Sixth Street
-                </label>
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">How many hours a week do you work?</label>
-              <div class="control">
-                <h4 class="title is-4">{{form.workHours}} / 80</h4>
-                <input type="range" min="0" max="80" v-model="form.workHours" />
+                <hr />
               </div>
             </div>
 
@@ -680,6 +657,7 @@
             >
               Submit order
             </button>
+            <pre><code>{{form}}</code></pre>
           </form>
         </div>
       </div>

@@ -1057,3 +1057,19 @@ footer .social-icon {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+.form-container label {
+  color: #2d3748;
+  text-align: left;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+.form-container input {
+  border-radius: 2px;
+  border: 1px solid #a0aec0;
+}
+
+.form-container .field {
+  margin-bottom: 15px;
+}
