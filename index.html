@@ -455,118 +455,8 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ORDER -->
     <section id="contact" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row">
-          <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
-            <div id="google-map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32222.065368189273!2d115.95573866684884!3d-31.90856967550198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32b9befc4ef6bb%3A0x504f0b535df5130!2sSouth%20Guildford%20WA%206055!5e0!3m2!1sen!2sau!4v1600786451197!5m2!1sen!2sau"
-                width="600"
-                height="450"
-                frameborder="0"
-                style="border: 0"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-sm-12">
-            <div class="col-md-12 col-sm-12">
-              <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                <h2>Online Order</h2>
-                <p>
-                  Send through a message of your order along with your contact
-                  number and we'll be in touch to confirm payment and delivery
-                  details.
-                </p>
-              </div>
-            </div>
-
-            <!-- CONTACT FORM -->
-            <form
-              action="#"
-              method="post"
-              class="wow fadeInUp"
-              id="contact-form"
-              role="form"
-              data-wow-delay="0.8s"
-            >
-              <!-- IF MAIL SENT SUCCESSFUL -->
-              <h6 class="text-success">
-                Your message has been sent successfully.
-              </h6>
-
-              <!-- IF MAIL NOT SENT -->
-              <h6 class="text-danger">
-                E-mail must be valid and message must be longer than 1
-                character.
-              </h6>
-
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cf-name"
-                  name="name"
-                  placeholder="Name"
-                />
-              </div>
-
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="cf-email"
-                  name="email"
-                  placeholder="Contact number"
-                />
-              </div>
-
-              <div class="col-md-12 col-sm-12">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cf-subject"
-                  name="subject"
-                  placeholder="Delivery Time"
-                />
-
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cf-subject"
-                  name="subject"
-                  placeholder="Delivery Address"
-                />
-
-                <textarea
-                  class="form-control"
-                  rows="2"
-                  id="cf-message"
-                  name="messageOrder"
-                  placeholder="Order - dishes and quantities"
-                ></textarea>
-
-                <button
-                  type="submit"
-                  class="form-control btn-aprons"
-                  id="cf-submit"
-                  name="submit"
-                >
-                  Send Order
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
       <div class="container">
         <div id="v-form" class="order-form">
           <h2 class="form-title">{{form.formName}}</h2>
@@ -578,7 +468,7 @@
             <div class="field">
               <label class="label">Name</label>
               <div class="control">
-                <input class="input" type="text" v-model="form.userName" />
+                <input class="input" type="text" v-model="form.name" />
               </div>
             </div>
 
@@ -600,7 +490,7 @@
               <label class="label">Meals</label>
               <div class="control">
                 <label>
-                  <select v-model="form.siomay.quantity">
+                  <select v-model="form.orders[0].quantity">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -612,7 +502,7 @@
                 </label>
                 <br />
                 <label>
-                  <select v-model="form.sate.quantity">
+                  <select v-model="form.orders[1].quantity">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -624,7 +514,7 @@
                 </label>
                 <br />
                 <label>
-                  <select v-model="form.nasiLiwet.quantity">
+                  <select v-model="form.orders[2].quantity">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -636,7 +526,7 @@
                 </label>
                 <br />
                 <label>
-                  <select v-model="form.nasiCampur.quantity">
+                  <select v-model="form.orders[3].quantity">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -645,19 +535,36 @@
                     <option value="5">5</option>
                   </select>
                   Nasi Campur - $8.50
+                  <hr class="cost-hr" />
                 </label>
-                <hr />
+                <br />
+                <label>Order Total: {{ total ? `$${total}` : '' }} </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Additional comments or requests.</label>
+              <div class="control">
+                <textarea
+                  class="text-area"
+                  cols="30"
+                  rows="2"
+                  v-model="form.other"
+                ></textarea>
               </div>
             </div>
 
             <button
               class="btn-aprons order-btn"
               type="submit"
-              @click.prevent="fakeSubmit"
+              @click.prevent="submitOrder"
+              v-if="!isSubmitting"
             >
               Submit order
             </button>
-            <pre><code>{{form}}</code></pre>
+            <span class="order-confirmation" v-else>
+              Order sent! Thank you, we'll be in contact to confirm.
+            </span>
           </form>
         </div>
       </div>

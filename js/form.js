@@ -3,37 +3,44 @@ new Vue({
   data: {
     form: {
       formName: 'Online Order',
-      userName: '',
+      name: '',
       email: '',
       number: '',
-      favoriteHamburger: '',
-      order: [],
-      siomay: {
-        quantity: 0,
-        cost: 8.5
-      },
-      sate: {
-        quantity: 0,
-        cost: 8.5
-      },
-      nasiLiwet: {
-        quantity: 0,
-        cost: 8.5
-      },
-      nasiCampur: {
-        quantity: 0,
-        cost: 8.5
-      },
-      workHours: 0
+      orders: [
+        {
+          quantity: 0,
+          cost: 8.5
+        },
+        {
+          quantity: 0,
+          cost: 8.5
+        },
+        {
+          quantity: 0,
+          cost: 8.5
+        },
+        {
+          quantity: 0,
+          cost: 8.5
+        }
+      ],
+      other: ''
     },
-    showSubmitFeedback: false
+    isSubmitting: false
   },
   methods: {
-    fakeSubmit() {
-      this.showSubmitFeedback = true;
+    submitOrder() {
+      this.isSubmitting = true;
       setTimeout(() => {
-        this.showSubmitFeedback = false;
-      }, 3000);
+        this.isSubmitting = false;
+      }, 6000);
+    }
+  },
+  computed: {
+    total() {
+      return this.form.orders.reduce((acc, order) => {
+        return acc + order.quantity * order.cost;
+      }, 0);
     }
   }
 });

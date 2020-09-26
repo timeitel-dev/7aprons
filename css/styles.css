@@ -704,7 +704,8 @@ navbar-right {
 }
 
 #contact input {
-  height: 55px;
+  height: 30px;
+  padding: 5px;
 }
 
 #contact button#cf-submit {
@@ -1072,4 +1073,19 @@ footer .social-icon {
 
 .form-container .field {
   margin-bottom: 15px;
+}
+
+.cost-hr {
+  margin: 10px 0;
+}
+
+.text-area {
+  border: 1px solid #a0aec0;
+  border-radius: 2px;
+}
+
+.order-confirmation {
+  color: #2f855a;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
