@@ -339,16 +339,17 @@ navbar-right {
 
 #home h1 {
   color: #ffffff;
-  padding-bottom: 30px;
+  font-size: 3.5em;
 }
 
 #home h3 {
   color: #f9f9f9;
-  font-size: 14px;
+  font-size: 18px;
   line-height: inherit;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
   margin: 0;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
